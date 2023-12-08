@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class DiskonTokoOnline {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Masukkan harga per barang: ");
+        double hargaPerBarang = scanner.nextDouble();
+        
+        System.out.print("Masukkan jumlah barang yang dibeli: ");
+        int jumlahBarang = scanner.nextInt();
+        
+        double totalHarga = hargaPerBarang * jumlahBarang;
+        double diskon = 0;
+        
+        if (jumlahBarang >= 5 && jumlahBarang <= 10) {
+            diskon = 0.05; 
+        } else if (jumlahBarang >= 11 && jumlahBarang <= 20) {
+            diskon = 0.10; 
+        } else if (jumlahBarang > 20) {
+            diskon = 0.20; 
+        }
+        
+        double totalDiskon = totalHarga * diskon;
+        double hargaSetelahDiskon = totalHarga - totalDiskon;
+        
+        System.out.println("Total harga sebelum diskon: " + totalHarga);
+        System.out.println("Total diskon: " + totalDiskon);
+        System.out.println("Total harga setelah diskon: " + hargaSetelahDiskon);
+        scanner.close();
+    }
+}
