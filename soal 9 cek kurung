@@ -1,0 +1,23 @@
+import java.util.Stack;
+public class CekKurung{
+    public static void main(String[] args) {
+        String ekspresi = "((2 + 2) * 3)";
+        System.out.println("Ekspresi \"" + ekspresi + "\" memiliki kurung yang " + (cekKurung(ekspresi) ? "benar" : "salah"));
+    }
+
+    public static boolean cekKurung(String ekspresi) {
+        Stack<Character> stack = new Stack<>();
+
+        for (char c : ekspresi.toCharArray()) {
+            if (c == '(') {
+                stack.push(c);
+            } else if (c == ')') {
+                if (stack.isEmpty() || stack.pop() != '(') {
+                    return false;
+                }
+            }
+        }
+
+        return stack.isEmpty();
+    }
+}
