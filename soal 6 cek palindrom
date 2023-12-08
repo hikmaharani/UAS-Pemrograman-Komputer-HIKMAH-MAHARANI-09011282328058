@@ -1,0 +1,20 @@
+public class PalindromCek {
+    public static void main(String[] args) {
+        String kata = "kasur rusak"; 
+        System.out.println("Apakah '" + kata + "' adalah palindrom? " + isPalindrome(kata));
+    }
+
+    public static boolean isPalindrome(String kata) {
+        kata = kata.toLowerCase().replaceAll("\\s+", "");
+        int i = 0;
+        int j = kata.length() - 1;
+        while (i < j) {
+            if (kata.charAt(i) != kata.charAt(j)) {
+                return false;
+            }
+            i++;
+            j--;
+        }
+        return true; 
+    }
+}
