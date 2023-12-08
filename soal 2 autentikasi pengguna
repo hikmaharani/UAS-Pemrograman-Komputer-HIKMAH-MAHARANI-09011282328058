@@ -1,0 +1,24 @@
+  import java.util.Scanner;
+public class AutentikasiPengguna {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        final String USERNAME = "user09011282328058";
+        final String PASSWORD = "abc123";
+        
+        System.out.print("Masukkan username: ");
+        String usernameInput = input.nextLine();
+        
+        System.out.print("Masukkan password: ");
+        String passwordInput = input.nextLine();
+        
+        // Melakukan autentikasi
+        if (USERNAME.equals(usernameInput) && PASSWORD.equals(passwordInput)) {
+            System.out.println("**Autentikasi Berhasil**");
+        } else {
+            System.out.println("**Autentikasi Gagal**");
+        }
+        
+        input.close();
+    }
+}
